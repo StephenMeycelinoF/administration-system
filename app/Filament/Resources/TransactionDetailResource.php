@@ -18,7 +18,7 @@ class TransactionDetailResource extends Resource
 {
     protected static ?string $model = TransactionDetail::class;
 
-    protected static ?int $navigationSort = 3;
+    protected static ?int $navigationSort = 5;
     protected static ?string $navigationGroup = 'Master Data';
     protected static ?string $navigationLabel = 'Detail Transaksi';
     protected static ?string $navigationIcon = 'heroicon-o-document-magnifying-glass';

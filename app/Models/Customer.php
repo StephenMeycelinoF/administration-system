@@ -43,4 +43,9 @@ class Customer extends Model
     {
         return $this->hasMany(Transaction::class);
     }
+
+    public function slips()
+    {
+        return $this->hasMany(Slip::class, 'customer_id');
+    }
 }

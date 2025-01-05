@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 100)->nullable(false);
             $table->enum('type', ['asset', 'liability', 'equity', 'revenue', 'expense'])->nullable(false);
+            $table->unsignedInteger("balance")->default(0);
             $table->string('code', 20)->unique();
             $table->timestamps();
         });

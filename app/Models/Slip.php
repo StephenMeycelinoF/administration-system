@@ -18,18 +18,13 @@ class Slip extends Model
         'bruto_bongkar',
         'tara_bongkar',
         'date_slip',
-        'transaction_id',
         'customer_id',
+        'invoice_number',
     ];
-
-    public function transaction(): BelongsTo
-    {
-        return $this->belongsTo(Transaction::class);
-    }
 
     public function customer(): BelongsTo
     {
-        return $this->belongsTo(Customer::class);
+        return $this->belongsTo(Customer::class, 'customer_id');
     }
 
     protected static function booted()

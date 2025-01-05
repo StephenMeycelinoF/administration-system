@@ -19,7 +19,7 @@ class SlipResource extends Resource
     protected static ?string $model = Slip::class;
     protected static ?string $navigationGroup = 'Master Data';
     protected static ?string $navigationLabel = 'Slip';
-    protected static ?int $navigationSort = 4;
+    protected static ?int $navigationSort = 2;
 
 
     protected static ?string $navigationIcon = 'heroicon-o-document';
@@ -77,12 +77,6 @@ class SlipResource extends Resource
                     ])->columns(3),
                 Section::make("Relasi Data")
                     ->schema([
-                        Forms\Components\Select::make('transaction_id')
-                            ->required()
-                            ->relationship('transaction', 'id')
-                            ->searchable()
-                            ->preload()
-                            ->label('Transaksi'),
                         Forms\Components\Select::make('customer_id')
                             ->required()
                             ->relationship('customer', 'name')

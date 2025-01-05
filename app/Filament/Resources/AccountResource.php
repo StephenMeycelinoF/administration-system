@@ -32,7 +32,6 @@ class AccountResource extends Resource
                     ->required()
                     ->maxLength(100),
                 Forms\Components\Select::make('type')
-
                     ->options([
                         'asset' => 'Asset',
                         'liability' => 'Liability',
@@ -40,9 +39,11 @@ class AccountResource extends Resource
                         'revenue' => 'Revenue',
                         'expense' => 'Expense',
                     ])
-
                     ->required(),
-            ])->columns(3);
+                Forms\Components\TextInput::make('balance')
+                    ->required()
+                    ->numeric(),
+            ])->columns(2);
     }
 
     public static function table(Table $table): Table
@@ -62,6 +63,8 @@ class AccountResource extends Resource
                         'revenue' => 'gray',
                         'expense' => 'danger',
                     }),
+                Tables\Columns\TextColumn::make('balance')
+                    ->numeric(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

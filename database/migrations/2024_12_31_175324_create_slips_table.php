@@ -22,8 +22,7 @@ return new class extends Migration
             $table->decimal('bruto_bongkar', 15, 2);
             $table->decimal('tara_bongkar', 15, 2);
             $table->date('date_slip');
-
-            $table->foreignId('transaction_id')->constrained()->onDelete('cascade');
+            
             $table->foreignId('customer_id')->constrained()->onDelete('cascade');
 
             $table->timestamps();
